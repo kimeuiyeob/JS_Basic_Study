@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 스코프 박살내기!</title>
+</head>
+
+<body>
+</body>
+<script>
+    //브라우저 인터프리터에서는 전역 변수들을 모두 window 객체에서 관리한다.
+
+    // 브라우저에서 사용될 지 Node.js에서 사용될 지 모를 때에는 this 혹은 globalThis를 사용한다.
+    // 1. this : 현재 스코프를 관리하는 객체(global 혹은 window)
+    // 2. globalThis : 현재 스코프를 관리하는 객체를 리턴(global 혹은 window)
+
+    globalThis.x;  // this와 globalThis의 사용에 있어서 차이는 없지만, 가독성이 더 좋은 globalThis를 권장한다.
+
+    // window.x; // 브라우저의 인터프리터에서는 전역변수를 관리하는 객체가 window이다.
+    // this.x; // 전역변수를 관리하는 객체인 window를 의미한다.
+
+    function f() {
+        var y;
+        var x = 20;
+        globalThis.x = 10;
+        // window.x = 10; // 전역 변수 접근
+        y = 10;
+        z = 10;
+
+        console.log(x);
+    }
+
+    f();
+    console.log(x, z);
+</script>
+
+</html>

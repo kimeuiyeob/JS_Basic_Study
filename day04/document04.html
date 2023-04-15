@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자를 이용한 선택</title>
+</head>
+
+<body>
+
+    <h1>
+        CSS 선택자를 이용한 선택
+    </h1>
+
+    <p>첫번째 단락이에요!</p>
+    <ul>
+
+        <li class="odd">김치찌개</li>
+        <li class="even">된장찌개</li>
+        <li class="odd">부대찌개</li>
+        <li class="even">돈까스</li>
+        <li class="odd">제육볶음</li>
+
+    </ul>
+</body>
+
+<script>
+    const p = document.querySelector("p"); //document에서 p태그 값을 가져와 p에 담는다.
+    // console.log(p.innerHTML);
+    p.innerHTML = "수정된 단락이에요!" //innerHTML은 그 문자열값을 바까준다. p.을 사용해서 바뀐것을 볼수있다.
+    
+    
+    const liOdd = document.querySelectorAll("li.odd"); //querySelectorAll로 가져온다, li.odd는 값이 복수이니까, 그것들을 liOdd변수에 담아준다.
+    console.log(liOdd);
+    liOdd.forEach(li => { //값들이 배열로 넘어오기때문에 for문을 돌려서 각각의 값들에 추가를해준다.
+        li.style.color = "purple"; //글자 색깔을 보라색으로 바까준다.
+    })
+
+    //짝수는 글자색을 마젠타로 변경
+    
+    const liEven = document.querySelectorAll("li.even"); //위에 공식과 동일하다.
+    liEven.forEach(i => {
+        i.style.color = "magenta";
+    })
+    
+    //위 로직을 딱 한줄로 변경
+    const lists = document.querySelectorAll("li"); //li안에는 odd,even이 다있으니까 li로 가져온다. 그걸 lists에다 담아준다.
+    lists.forEach(i => i.style.color = i.getAttribute("class") == 'odd' ? 'red' : 'green'); 
+    //lists에는 even,odd값들이 있기때문에 for문을 돌려 i.getAttribute를 일일이 반복돌아 class이름이 odd니? 맞으면 red 아니면 green해서
+    //class이름이 odd이면 red색깔이 i.style.color로 들어가서 빨강색이 출력되고, 반대로 even은 나머지이기때문에 green색깔로 출력된다.
+    
+    //자바스크립트는 위에서 아래로 실행되기때문에 아래께 마지막에 출력된다.
+    
+
+    
+
+</script>
+
+</html>

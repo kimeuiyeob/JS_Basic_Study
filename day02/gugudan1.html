@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Hi Melody', cursive;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.5rem;
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>구구단</h1>
+    <h3>입력받은 단 출력</h3>
+    <hr>
+</body>
+<script>
+    /* 사용자에게 단 수를 입력받은 후 해당 구구단 출력 */
+    /* 결과는 body태그 안에 출력한다. */
+
+    while (true) {
+        var input = prompt("단 : "); //input 에 3을 넣는다면
+        let dan = parseInt(input);  // dan은 3이되고
+        if (printGugudan(dan)) { break; } //트루를 리턴받고 브레이크를 실행한다.
+    }
+
+    function printGugudan(dan) {
+        var check = input - dan != 0.0; // 3-3은 0이아니므로 false
+        var rangeCondition = dan < 1 || dan > 9; //3은 1보다 작지 않으므로 false
+        if (isNaN(dan) || check || rangeCondition) { //isNaN에 3이라는 값이 들어갔기 때문에 false
+            alert("다시 입력해주세요."); //셋다 false이기때문에 여기로 들어오지 않는다.
+            return false;
+        }
+
+        for (let i = 1; i < 10; i++) {  //여기 for문이 실행된다.
+            document.write("<p>" + dan + "*" + i + "=" + dan * i + "</p>");  //3 + 1 = 3 반복 10개가 실행되고
+        }
+
+        return true; //true를 리턴해준다.
+
+    }
+</script>
+
+</html>

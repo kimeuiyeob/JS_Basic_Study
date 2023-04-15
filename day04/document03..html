@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디를 이용한 선택</title>
+</head>
+
+<body>
+
+    <h1>아이디를 이용한 선택</h1>
+
+    <div class="odd">
+        첫 번째 DIV입니다.
+    </div>
+    <div class="odd">
+        두 번째 DIV입니다.
+    </div>
+    <div class="odd">
+        세 번째 DIV입니다.
+    </div>
+
+
+</body>
+
+<script>
+    const div = document.getElementsByClassName("odd"); //document는 html에 요소중 odd라는 ID를 가진
+    HTMLCollection.prototype.forEach=Array.prototype.forEach();
+
+    console.log(div);
+
+    div.forEach(i => {
+        console.log("방가방가");
+        i.style.color = "red";
+    })
+    
+</script>
+
+</html>

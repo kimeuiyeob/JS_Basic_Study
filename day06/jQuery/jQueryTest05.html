@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트</title>
+</head>
+<body>
+    
+    <ul class="dessert">
+        <li>마카롱</li>
+        <li>브라우니</li>
+        <li>에그타르트</li>
+        <li>휘낭시에</li>
+        <li>다쿠아즈</li>
+        <li>아이스크림</li>
+        <li>와플</li>
+        <li>까놀래</li>
+        <li>케이크</li>
+        <li>츄러스</li>
+        <li>스콘</li>
+    </ul>
+
+    <div style="cursor : pointer;">눌러보세요~</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+    var $div = $("ul").next();
+    var $ul = $("div").prev();
+
+    $div.on("click",function(){
+        // $ul.hide(2000);
+        // $ul.show(2000);
+        // $ul.foggle(2000);
+        // $ul.fadeout(2000);
+        // $ul.fadein(2000);
+        // $ul.fadefoggle(2000);
+        $ul.slideup(2000);
+        $ul.slidedown(2000);
+        // $ul.slidefoggle(2000);
+    })
+</script>
+
+</html>

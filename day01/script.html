@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script 태그 안에서 코드 작성</title>
+</head>
+
+<body>
+
+    <!-- <h3>마우스를 올려보세요</h3>
+<hr>
+<img src="images/santa.png" onmouseover="over(this);" onmouseout="out(this);"> -->
+
+    <!-- <h1>마우스를 사진에 올려보세용~~</h1>
+<hr>
+<img src="images/deer.png" onmousedown="over(this)" onmouseleave="out(this)"> -->
+
+    <img src="images/present.png" onmouseenter="open(this)">
+
+</body>
+
+<script>
+
+    function open(obj) {
+        obj.src = "images/santa.png";
+    }
+    
+
+</script>
+
+<!-- <script>
+function over (obj) {
+    obj.src="images/deer.png"
+}
+function out (obj) {
+    obj.src="images/santa.png"
+}
+</script> -->
+
+
+
+
+
+<!-- <script>
+    function over(obj) {
+        obj.src="images/santa.png";
+    }
+    function out (obj) {
+        obj.src ="images/tree.png";
+    }
+</script> -->
+
+</html>

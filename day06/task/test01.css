@@ -1,0 +1,19 @@
+body {
+    font-family: 'Jua'; /* 외부 폰트 이름이 Jua여서 이렇게 body태그로 잡아 전부 Jua폰트 사용 */
+}
+
+table {
+    width: 30%; /* 그 테이블의 크기를 30%로 만든다는 것 */
+    text-align: center;/* 이건 그안에 텍스트 글자들이 가운데 정렬하는것 */
+    margin: 0 auto; /* margin 0 auto는 가운데로 모이게 하는것 */
+}
+
+thead {
+    background-color: #fff9c4; /* thead은 html에서 테이블의 첫번째 열을 thead 태그로 감싼것이다, 그걸 저색깔로 변경  */
+}
+
+fieldset { /* 위 테이블과 동일하다고 생각! */
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+}

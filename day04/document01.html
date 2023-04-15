@@ -1,0 +1,56 @@
+<!-- DOM (Document Object Model) 객체
+HTML 태그들을 하나씩 객체화 한것
+HTML 페이지의 내용과 모양을 제어하기 위해 사용되는 객체이다.
+HTML 태그당 DOM 객체가 하나씩 생성된다
+HTML 태그의 포함관계에 따라서 부모, 자식, 형제자매 관계로 구성된다. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 이름을 이용한 선택</title>
+</head>
+
+<body>
+
+    <h1>클래스 이름을 이용한 선택</h1>
+    <h1>
+        <ul>
+            <li class="odd">첫번째 아이템이에요!</li>
+            <li class="even">두번째 아이템이에요!</li>
+            <li class="odd">세번째 아이템이에요!</li>
+            <li class="even">네번째 아이템이에요!</li>
+            <li class="odd">다섯번째 아이템이에요!</li>
+        </ul>
+
+    </h1>
+
+</body>
+
+<script>
+
+    //console.log(document.getElementsByClassName("odd")); //document는 html을 가리키고 .getElements 요소들을 가져온다 ClassName 클래스 이름을
+    const lists = document.getElementsByClassName("odd"); // 클래스는 중복 가능 위에 odd 클래스가 3개가 있다. 그 값들을 lists 변수에 담아준다. 
+
+    //in뒤에 있는 자료구조와 key값을 i에 담을 수있다.
+    // for (let i in lists) { //여기서 in은 of랑 다르게 반복길이가 하나더 있어서 반복을 한번더 돈다고 생각하면 된다.그래서 쓰지 말자!
+    //     lists[i].style.color = "red";
+    // }
+
+    for(let i of lists) { //빠른 포문이라고 생각하자, lists 값들을 하나하나 i에 담는다.
+        i.style.color = "blue"; //그 값들의 스타일을 파란색으로 바꾼다 ->이러면  odd클래스안에 첫번째,세번째,다섯번째 문자열색깔이 파란색으로 바뀐다.
+    }
+
+    const listss = document.getElementsByClassName("even"); //위랑 똑같다, 이번에는 document안에 even이라는 클래스를찾아 그값들을 listss에 담아준다.
+
+    for(let i of listss) { //그리고 그 값들을 i에 하나하나 담아 초록색깔로 바까준다.
+        i.style.color = "green";
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 이벤트</title>
+</head>
+<body>
+    
+    <h3>CSS 스타일 동적 변경</h3>
+    <hr>
+    <p>
+        김의엽 최강짱짱맨
+    </p>
+<input type="button" value="스타일 변경">
+
+</body>
+
+    <script>
+        const input = document.querySelector("input[type='button']");
+        const p = document.getElementsByTagName("p")[0];
+
+        input.addEventListener("click",function(){
+
+            this.style.background = "yellow";
+            p.style.fontSize = "30px";
+            p.style.border = "3px dotted magenta";
+            p.style.width = "10vw"; //width 퍼센트!
+
+        });
+
+    </script>
+
+</html>

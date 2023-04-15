@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="tost01.css"> <!-- css 연동시키기 -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- 외부 폰트 연결시키기 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <title>숫자를 한글로 변경</title>
+</head>
+
+<body>
+    <div id="round">1</div>
+
+    <fieldset>
+        <legend>숫자를 한글로 변경</legend>
+        <p id="result">결과 표시 부분</p>
+        <input type="text" name="input" onkeyup="if(window.event.keyCode==13){getResult()}">
+        <br>
+        <button id="change">변경</button>
+    </fieldset>
+
+</body>
+<!-- <script src="tost01.js"></script> js연동시키기 -->
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+
+    /* 점으로 시작하면 다시 입력하라고하기 */
+    $("#change").on('click', getResult);
+
+    function changeToHangle(number) {
+        const $div = $("#round");
+        const $p = $("#result");
+        let hangle = "공일이삼사오육칠팔구";
+        let data = "";
+        let result = "";
+        let check = false;
+        let zeroCheck = parseInt(number) == 0;
+
+        if (isNaN(number) || number.startsWith(".")) {
+            $p.text("숫자만 입력해주세요.");
+            $div.text("4");
+            return;
+        }
+
+        if (number < 1) {
+            result = "영";
+            check = true;
+        }
+
+        if (number < 0) {
+            result = "마이너스 ";
+            check = false;
+            if (zeroCheck) {
+                result += "영";
+                check = true;
+            }
+        }
+
+        $div.text("3");
+
+        for (let i in number) {
+            data = hangle[number.charAt(i)];
+            console.log(data);
+            if (check && data == '공') {
+                check = false;
+                continue;
+            }
+
+            if (number.charAt(i) == '-') {
+                continue;
+            }
+
+            if (!data && number.charAt(i) != '-') {
+                result += "점";
+                $div.text("2");
+                continue;
+            }
+            result += data;
+        }
+        $p.text(result);
+    }
+
+    function getResult() {
+        var input = $("input[name='input']").val()
+        changeToHangle(input);
+    }
+
+</script>
+
+</html>

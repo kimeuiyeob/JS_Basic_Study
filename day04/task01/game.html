@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css"> <!-- href="(css파일이름)" 이렇게 css파일로 연동한다 -->
+    <title>game</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>up down game</h1> <!-- h1으로 글자를 키워 제목같은 느낌을 준다. -->
+        <div id="problem"><strong>★숫자를 맞춰보세요★</strong></div>
+        <form name="joinForm">
+            <input type="text" style="display:none;"> <!-- text창을 만들었지만 스타일에 display:non을 줘서 실제 화면에서 안보이게한다. -->
+            <input type="number" id="input" onkeyup="if(window.event.keyCode==13){check()}">
+            <!-- type : number도 텍스트창이랑 비슷한데 정수만 입력받을수 있다. -->
+            <!-- onkeyup 은 키보드로 발생시키는 이벤트라고 생각하자 -> 만약 keycode == 13이라면 check()함수를 실행시킨다 / 키보드에서 엔터가 13이다. -->
+            <input type="button" id='button' value="확인 버튼" onclick="check()">
+            <!-- type: button 을 하나 생성해주고 value로 그안에 확인버튼이라고 새겨준다. onclick은 마우스로 클릭시 실행하는 이벤트라고 생각 그럼 check()함수 실행 -->
+        </form>
+        <div id="check"></div>
+        <strong>총 7번의 기회가 있습니다~</strong>
+        <div><span id="count"></span> 회 시도하셨습니다.</div>
+    </header>
+
+</body>
+
+<script src="game.js"></script> <!-- src="(js파일이름)" 이렇게 js로 연동한다. -->
+
+</html>

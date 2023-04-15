@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>name을 이용한 선택</title>
+</head>
+
+<body>
+
+    <h1>name 속성을 이용한 선택</h1>
+    <form name="joinForm"> 
+
+        <div>
+            <input type="text" name="id" placeholder="아이디" value=""> 
+            <!--input으로 텍스트창을 하나만들고,placeholder 사용해서 아이디를 넣고, 텍스트창에는 value 빈문자를 넣는다.. -->
+        </div>
+
+        <div>
+            <input type="password" name="pw" placeholder="비밀번호" value="">
+        </div>
+        <div>
+            <input type="checkbox" name="language" value="java" checked> JAVA  <!-- name도 중복으로 사용가능 , 아이디만 중복하지말자 약속!! -->
+            <!--input을 이용해서 checkbox하나를 생성,체크박스 옆에 java라고 value넣기 => 근데 마지막 checked를 이용해서 checkbox체크를 해준다.근데 이거 쓰지말자-->
+            <!--자바스크립트에서 check를 수정하면 html에께 먹히질 않는다 그래서 오히려 혼동을 일으킬수가 있음. -->
+            <input type="checkbox" name="language" value="c"> C
+            <input type="checkbox" name="language" value="python"> Python
+
+        </div>
+    </form>
+</body>
+
+<script>
+
+    //자바쪽에서 checked 를 사용하지말고 script에서 check속성을 true 혹은 false로 부여해서 사용하자.
+    //HTML태그에 checked 속성을 부여하면, js checked 프로퍼티를 false로 설정해도
+    //checked 속성이 HTML요소에 남아있다.
+    //따라서 체크 여부를 검사할 때에는 js 프로퍼티로 검사하는것이 정확하다.
+
+    const checkboxes = document.getElementsByName("language"); //document는 html요소의 ByName으로 language를 찾는다. 위에보면 3개의 checkbox의 값들을 checkboxes에 담는다.
+    // checkboxes.forEach(v => { //체크를 한번에 해주기 위해서 forEach를 사용한다.
+    //     v.checked = true;
+    //     console.log(checkboxes);
+    // })
+    // ======================================================================================
+    checkboxes.forEach(i => {
+        console.log(i.getAttribute("checked")); //getAttribute()는 안에있는 속성 확인!
+        console.log(i.checked);
+    });
+
+
+    //사용자가 입력한 아이디와 패스워드를 콘솔에 출력한다.
+    // console.log(joinForm.id.value);
+    // console.log(joinForm.pw.value);
+
+    const id = document.getElementsByName("id");
+    const pw = document.getElementsByName("pw");
+
+
+    console.log(id[0].value);
+    console.log(pw[0].value);
+
+
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="test01.css"> <!-- css연동 할때 href="(여기안에 css파일이름입력)"해서 연동시킨다. -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- 여기는 외부 폰트를 사용하려고 href를 가지고 온것이다. -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <title>요금표</title>
+</head>
+
+<body>
+    <table border="1">
+        <!-- 테이블의 테두리를 border로 만들어준다. -->
+        <caption>요금표</caption> <!-- 표의 제목은 caption을 사용한다. -->
+        <thead>
+            <tr>
+                <th>구분</th> <!-- th는 표의 맨상단 열로 구분지을수 있다. -->
+                <th>요금</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>아동</td> <!-- td는 일반 테이블의 열이다. -->
+                <td>무료</td>
+            </tr>
+            <tr>
+                <td>청소년</td>
+                <td>2000원</td>
+            </tr>
+            <tr>
+                <td>성인</td>
+                <td>5000원</td>
+            </tr>
+        </tbody>
+    </table>
+    <fieldset>
+        <legend>구분</legend>
+        <input type="text" id="input" onkeyup="if(window.event.keyCode==13){confirm()}">
+        <!-- 테스트입력받을 창하나를 input으로 생성 , onkeyup은 onclick과 비슷하지만 말그래도 키보드로 실행시킬때 사용 -->
+        <!-- if를 사용해서 만약 window.event.keyCode ==13 엔터키가 키코드 13이다. 13을 입력하게 되면 confirm()이라는 함수 실행 -->
+        <input type="button" value="확인" onclick="confirm()">
+        <!-- button하나를 만들어 그안에 확인이라는 글을 넣고, onclick이라는게 마우스로 클릭했을때 실행하는 이벤트, 그리고 클릭시 confirm 이라는 함수 실행! -->
+    </fieldset>
+</body>
+<!-- <script src="test01.js"></script> js를 연동시킬때 src="(js파일이름)" 이렇게 연동한다. -->
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+
+<script>
+    let $tempTr;
+    let tempText;
+
+    function confirm() {
+        const input = $("#input").val(); /* 인풋창에 내가 입력한 값 input변수에 담기 */
+        // console.log(input);
+
+        const $trs = $("tbody tr"); /* tr 3개를 trs변수에 담기 */
+        // console.log($trs);
+        let check = false;
+
+        if ($tempTr) { /* 색깔과 별을 원래대로 돌려주기 위한 if문 */
+            $tempTr.css("background", "#fff"); /* $이므로 .css로 배경색을 바까준다. */
+            $tempTr.children().first().text(tempText); /* $이므로 .children() */
+        }
+
+        $trs.each(function (i, tr) { /* 제이쿼리에서의 반복문 $변수명.each(function(i,e){ }) */
+            let $td = $(tr).children().first(); /* $이므로 $(tr)이걸루 묶어주고 tr 3개의 첫번째 아들 즉 아동,청소년,성인을 $td에 담아준다. */
+            if ($td.text() == input) { /* 제이쿼리의 안에있는 값을 가져오기 위해서는 .text()를 사용한다.*/
+
+                $tempTr = $(tr); /* 만약 입력한 값이랑 안에 있는 텍스트값이 같다면 tr3개중 하나가 tempTr에 담기게 된다. */
+                tempText = $td.text(); /* 내가 입력한 값이랑 같은 텍스트를 tempText에다 담아준다. */
+
+                $(tr).css('background', "#ef5350"); /* 그 행에다가 빨간색 배경색을 넣어준다. */
+                $td.text("★" + input); /* 그 텍스트에다 별을 추가해준다 */
+                check = true;
+            }
+        })
+
+        if (!check) {
+            alert("다시 시도해주세요.");
+        }
+
+    }
+</script>
+
+</html>

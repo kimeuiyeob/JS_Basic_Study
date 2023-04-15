@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write() 실습</title>
+</head>
+<body>
+
+  <!--   <br>태그를 사용하지 않고, 덧셈결과는 직접 연산을 통해 출력한다.
+    아래의 문서를 그대로 wrtie(), writeln()을 사용하여 작성한다.
+
+    document.write()활용
+    -----------------------(hr태그)
+    Welcome!
+    2+5는
+    7입니다. -->
+
+    <script>
+
+    with(document) {
+
+        write("<pre>")
+        writeln("document.write()활용")    
+        writeln("<hr>");
+        writeln("Welcome!");
+        writeln("2+5는");
+        writeln(2+5 + "입니다.");
+        write("</pre>")
+
+    }
+
+    </script>
+</body>
+</html>

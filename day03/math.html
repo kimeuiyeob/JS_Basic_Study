@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math를 이용한 구구단 연습</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    
+    // Math 는 코어 객체 = 이미 만들어져 있는 객체
+    // Math.floor(Math.random()*n) : 0 ~ n-1의 난수
+    
+    function getRandomInt(range) {
+        var result = Math.floor(Math.random() * (range + 1));
+        result += range == 8 ? 1 : 2;
+        return result;
+    }
+
+    var question = getRandomInt(7) + "*" + getRandomInt(8);
+    var answer = eval(question);
+    var MyAnswer = prompt(question, 0);
+
+    if (answer == MyAnswer) {
+        document.write("<h1>정답</h1>");
+    } else {
+        document.write("<span style='font-size : 3px;'>오답</span>");
+    }
+
+</script>
+
+
+</html>

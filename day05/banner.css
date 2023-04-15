@@ -1,0 +1,61 @@
+section.container {
+    width: 90vw;
+    margin: 0 auto;
+    overflow: hidden; /* 범위이탈요소처리 -> 슬라이드 배너라 90vw밖 양옆으로 있는 사진들을 hidden으로 숨겨준다. */
+    position: relative; 
+}
+
+div.banner {
+    width: 720vw; /* 6 1 2 3 4 5 6 1 이런식으로 사진들이 있다고 생각 !! */
+    /* 720vw한 이유는 화면에 보이는 90vw가 사진 총 6개 + 첫번째 사진 전에 여섯번째사진 , 마지막 사진후에 첫번째 사진해서 총 90vw * 사진 8개 = 720vw */
+}
+
+div.banner div {
+    width: 90vw;
+    float: left; /* float 은 해당 요소를 어떻게 정렬할지를 정의하는 css 속성이다,  즉 오른쪽에 있는 사진들이 왼쪽으로 정렬된다고 생각!*/
+}
+
+div img {
+    width: 100%;
+}
+
+div.buttons {
+    width: 90vw;
+    position: absolute; /* 포지션 absoulute를 줘서 컨테이너 div안에서만 자리잡게 해준다. */
+    bottom: 10px;
+    text-align: center;
+}
+
+div.buttons button {
+    border-radius: 50%; /* 버튼 태그 테두리를 동그라미로 */
+    width: 15px;
+    height: 15px;
+}
+
+div.arrow {
+    position: absolute; /* 포지션 absoulute를 줘서 컨테이너 div안에서만 자리잡게 해준다. */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;  /* 버튼 태그 테두리를 동그라미로 */
+    border: solid 3px grey;
+    font-weight: bold; /* 글씨 두께 주기 */
+    font-size: 1.3rem;
+    color: grey;
+    line-height: 26.5px; /* 글자 높이 */
+    text-align: center;
+    z-index: 1; 
+    /* 여러 사진을 같은 곳에 나두면 머가 위에 올라갈지 뒤로갈지 모르기때문에 z-index 숫자를 줘서 눈에보이게하는건 숫자가 높은거 뒤로숨기는건 숫자가 낮게 */
+    top: 50%;
+    /* 컨테이너 div안에 위에서 50퍼센트만큼 내려오지만 div가운데서 50퍼만큼내려오는게 아니라 상단에서 내려오는거라 실제는 더내려가 있다*/
+    transform: translateY(-50%);
+    /* 그래서 이걸 사용해서 가운데로 맞춘다 , 이거 잘기억하자!! tanslateY는 위아래, translateX는 양옆이라고 생각 , -50은 탑50에서 더내려왔기때문에 -50을줘서 도로 올린다. */
+    cursor: pointer;
+}
+
+div.prev {
+    left: 20px;
+}
+
+div.next {
+    right: 20px;
+}

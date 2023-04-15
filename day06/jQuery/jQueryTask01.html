@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="num" id="one" value="나는야">
+    <input type="checkbox" name="" onclick="play1()">
+    <br>
+    <input type="text" class="num" id="two" value="완소남">
+    <input type="checkbox" name="" onclick="play2()">
+    <br>
+    <input type="text" class="num" id="three" value="멋쟁이">
+    <input type="checkbox" name="" onclick="play3()">
+    <div>
+        <input type="button" name="" id="four" value="sexy" onclick="play4()">
+        <input type="button" value="shit" onclick="$('.num').css('background','white')" )>
+        <input type="button" value="holly" onclick="$('.num').css('background','red')">
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+    var one = document.querySelector("#one");
+    var two = document.querySelector("#two");
+    var three = document.querySelector("#three");
+
+    function play1() {
+        two.style.background = "white";
+        three.style.background = "white";
+        one.style.background = "red";
+
+    }
+    function play2() {
+        one.style.background = "white";
+        three.style.background = "white";
+        two.style.background = "red";
+    }
+    function play3() {
+        one.style.background = "white";
+        two.style.background = "white";
+        three.style.background = "red";
+    }
+
+    function play4() {
+        var sss = document.querySelectorAll(".num");
+        sss.forEach(i => {
+            i.style.background = "red";
+        })
+    }
+</script>
+
+</html>

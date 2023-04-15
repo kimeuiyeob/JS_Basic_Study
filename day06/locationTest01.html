@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 이동</title>
+</head>
+
+<body>
+    <form action="" name="myForm">
+        <label>
+            무신사
+            <input type="radio" name="site" value="musinsa"> <!-- radio 타입은 버튼인데 동그라미 체크하는 느낌 -->
+        </label>
+        <label>
+            쿠팡
+            <input type="radio" name="site" value="cupang">
+        </label>
+        <label>
+            네이버
+            <input type="radio" name="site" value="naver">
+        </label>
+        <label>
+            하이버
+            <input type="radio" name="site" value="hiver">
+        </label>
+        <div>
+            <input type="button" value="이동" onclick="send()">
+        </div>
+    </form>
+</body>
+<script>
+
+    // with (console) {
+    //     log(location.href);
+    //     log(location.pathname);
+    //     log(location.port);
+    // }
+
+    function send() {
+        if (!myForm.site.value) {
+            alert("사이트를 선택해주세요.");
+            return;
+        }
+        let url;
+        switch (myForm.site.value) {
+            case 'musinsa':
+                url = 'https://www.musinsa.com/app/'
+                break;
+            case 'cupang':
+                url = 'https://www.coupang.com/'
+                break;
+            case 'naver':
+                url = 'https://www.naver.com/'
+                break;
+            case 'hiver':
+                url = 'https://www.hiver.co.kr/'
+                break;
+        }
+  
+        // location.href = url; /* 그 url로 너머감 */
+        // location.assign(url); /* 뒤로가기 됨 */
+        location.replace(url); /* 뒤로 가기 안됨  */
+    }
+
+</script>
+
+</html>

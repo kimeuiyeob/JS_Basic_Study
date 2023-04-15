@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div>
+        <button class="button1">다음 요소의 색을 변경하자. Click me!</button>
+        <button class="button2">이전 요소의 색을 변경하자. Click me!</button>
+    </div> -->
+
+    <!-- <div>
+        <input type="button" class="button1" value="오라클로" style="background : grey">
+        <input type="button" class="button2" value="배우는" style="background : grey"> 
+        <input type="button" class="button3" value="데이터" style="background : grey"> 
+        <input type="button" class="button4" value="베이스" style="background : grey"> 
+        <input type="button" class="button5" value="입문" style="background : grey"> 
+    </div> -->
+
+    <div class="abc">
+        <input type="text" class="text" id="" placeholder="여기에 이름을 입력">
+        <br>
+        <input type="button" class="add" id="" value="이름붙이기">
+        <br>
+        <input type="button" class="delete" id="parent" value="다지우기">
+        <hr>
+        <br>
+    </div>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+
+    $(".add").click(function () {
+        var text = $(".text").val();
+        $("div.abc").append('<div>' + text + '</div>');
+    })
+    
+   /*  $(".delete").click(function () {
+        var $text = $(".text").val();
+        $("div").append($text);
+    })  */
+
+    // // ul 태그 마지막 자식요소로 요소 추가
+    // $ul.append('<li>마세라티</li>');
+    // // ul 태그 첫번째 자식요소로 요소 추가
+    // $ul.prepend('<li>애스터마틴</li>');
+
+
+
+
+// $(".button").click(function() {
+//     if(!($(".text").val().includes("@"))){
+//         alert("이메일이 아닙니다. 이메일을 입력해주세요.")
+//     } else {
+//         alert ("당신의 이메일은 " + $(".text").val() + "입니다.")
+//     }
+// })
+
+// $(".button").click(function() {
+//     if(!($(".text").val())){
+//         alert("입력하세요!!")
+//     } else {
+//         alert("입력하신 문자는 " + $(".text").val() + " 입니다.");
+//     }
+// })
+
+</script>
+
+
+<!-- <script>
+
+$(".button1").click(function() {
+    $(this).next().css('background','red');
+})
+$(".button2").click(function() {
+    $(this).next().css('background','red');
+    $(this).css('background','grey');
+})
+$(".button3").click(function() {
+    $(this).next().css('background','red');
+    $(this).css('background','grey');
+})
+$(".button4").click(function() {
+    $(this).next().css('background','red');
+    $(this).css('background','grey');
+})
+$(".button5").click(function() {
+    $(this).next().css('background','red');
+    $(this).css('background','grey');
+})
+
+</script> -->
+
+<!-- <script>
+
+    $('.button1').click(function () {
+        $(this).next().css('color', 'red');
+        $(this).css('color', 'black');
+    });
+
+    // 이전 요소에 대한 색상 변경
+    $('.button2').click(function () {
+        $(this).prev().css('color', 'red');
+        $(this).css('color', 'black');
+    });
+</script> -->
+
+</html>

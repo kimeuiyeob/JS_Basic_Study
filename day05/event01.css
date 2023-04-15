@@ -1,0 +1,9 @@
+
+label[for='attach'] div {
+    width: 150px;
+    height: 150px;
+    background-image: url('img/attach.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

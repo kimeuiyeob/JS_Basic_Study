@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval()</title>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+
+<script>
+    
+//setInterval(callback, millis) : 전달한 밀리초마다 callback함수 실행
+//clearInterval(setInterval함수) : 전달한 함수 종료
+
+  var inter = setInterval(function(){ 
+        //원하는 함수 설정
+        const div = document.getElementById('wrap');
+        const h2 = document.createElement('h2');
+        h2.innerHTML = "김의엽";
+        div.appendChild(h2);
+    },1000) //1초마다 실행
+
+    setTimeout(function(){
+        clearInterval(inter); //동작중인
+    },5000)
+    
+</script>
+</html>

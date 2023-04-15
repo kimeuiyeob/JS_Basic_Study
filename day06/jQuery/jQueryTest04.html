@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 전체 동의</title>
+</head>
+
+<body>
+    <form action="" name="myForm">
+        <div>
+            <label>
+                전체 동의
+                <input type="checkbox" name="term1" class="all">
+            </label>
+        </div>
+        <div>
+            <label>
+                서비스 이용약관 동의
+                <input type="checkbox" name="term1" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                광고 수신 동의
+                <input type="checkbox" name="term2" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                개인 정도 이용약관 동의
+                <input type="checkbox" name="term3" class="term">
+            </label>
+        </div>
+    </form>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+
+    // var $form = $(".all");
+    // var $term = $(".term");
+
+    // $form.on("click", function () {
+    //     console.log$(this).is(":checked");
+    //     if ($form.is(":checked")) {
+    //         $term.each(i => {
+    //             i.$term.is(":checked");
+    //         });
+    //     }
+    // })
+
+</script>
+
+<script>
+
+    // var $all = $(".all");
+    // var $inputs = $(".term");
+
+    // $all.click(function () {
+    //     $inputs.prop("checked", $(this).is(":checked"));
+    // });
+
+    /*   하나의 약관이라도 해제가 된다면 전체 동의 체크 해제
+     각 항목이 모두 체크되면 전체동의 체크  */
+
+    //  $inputs.click(function(){
+    //      $all.prop("checked",false);
+    //  });
+
+    /*   하나의 약관이라도 해제가 된다면 전체 동의 체크 해제
+   각 항목이 모두 체크되면 전체동의 체크  */
+
+    // $inputs.click(function () {
+    //     if (!$(this).is(":checked")) {
+    //         $all.prop('checked', false);
+    //     }
+    //     if ($inputs.filter(":checked").length == 3) {
+    //         $all.prop('checked', true);
+    //     }
+    // })
+
+</script>
+
+</html>
